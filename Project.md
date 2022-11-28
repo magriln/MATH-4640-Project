@@ -6,4 +6,5 @@
 ###### Title: The SVD. What is it, what it can be used for, how it can be computed.
 ----
 ### Base Idea and Introduction
-###### Singular Value Decomposition is as simple as its name, its a method of decomposing matrix into matrices composed of singular values. Of course it is a little more intuitvie than that. Given an $m$ by $n$
+###### Singular Value Decomposition is as simple as its name, its a method of decomposing matrix into matrices composed of singular values. Of course it is a little more intuitvie than that. Given a matrix, $A$, of size $m \times n$ we can factorize this matrix into the following form,
+$$A = U\Sigma V^{T}$$

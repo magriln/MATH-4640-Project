@@ -5,3 +5,4 @@
 ###### Topic: 11
 ###### Title: The SVD. What is it, what it can be used for, how it can be computed.
 ----
+### Base Idea and Introduction

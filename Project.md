@@ -86,3 +86,15 @@ V = \begin{bmatrix}
 1/\sqrt{2} & -1/\sqrt{18} & -2/3\\
 0 & 4/\sqrt{18} & -1/3\\
 \end{bmatrix}$$
+###### Finally we can compute $U$ through the formula $\sigma u_{i} = Av_{i}$ or $u_{i} = \fraq{1}{\sigma}Av_{i}. Doing so we can compute $U$ and we can find our full SVD decomposition below,
+$$A = U\Sigma V^{T} = \begin{bmatrix}
+1/\sqrt{2} & 1/\sqrt{2}\\
+1/\sqrt{2} & -1/\sqrt{2}
+\end{bmatrix}\begin{bmatrix}
+5 & 0 & 0\\
+0 & 3 & 0
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{2} & 1/\sqrt{2} & 0\\
+1/\sqrt{18} & -1/\sqrt{18} & 4/\sqrt{18}\\
+2/3 & -2/3 & -1/3\\
+\end{bmatrix}$$$$

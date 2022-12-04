@@ -45,3 +45,21 @@ $$A^{T}A - \lambda_{1}I = \begin{bmatrix}
 12 & -12 & -2\\
 2 & -2 & -17\\
 \end{bmatrix}$$ 
+###### Reducing this matrix will give us our first eigenvector which is given by,
+$$v_{1} = \begin{bmatrix}
+1/\sqrt{2}\\
+1/\sqrt{2}\\
+0
+\end{bmatrix}$$
+###### Similarly we perform the same computation for $\lambda_{2} = 9$$.
+$$A^{T}A - \lambda_{2}I = \begin{bmatrix}
+4 & 12 & 2\\
+12 & 4 & -2\\
+2 & -2 & -1\\
+\end{bmatrix}$$ 
+###### Reducing this matrix will give us our first eigenvector which is given by,
+$$v_{2} = \begin{bmatrix}
+1/\sqrt{18}\\
+-1/\sqrt{18}\\
+4/\sqrt{18}
+\end{bmatrix}$$

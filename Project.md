@@ -105,7 +105,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 ###### Now from our lectures we noted a few important applications of SVD. One main benefit is its ability to compute other aspects regarding matrices that we list below:
 - **Minimum norm solution:** given a system of equations $Ax\cong b$ we can determine the following,
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
-- **Euclidean matrix norm:** Can be given by $\| A \|$
+- **Euclidean matrix norm:** Can be given by $||A|| _{2}$
 
 - 
 

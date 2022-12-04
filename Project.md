@@ -24,6 +24,13 @@ $$VV^{T} = V^{T}V = I$$
 ###### These properties prevents us from working with a possible "ugly matrix" by producing matrices that are easier to handle as illustrated above. However, what is SVD actually doing? So you have a matrix A, which is the matrix you want to decompose using SVD. This is a transformation matrix that transforms a group of vectors to new space. Let’s define the original orthogonal vectors as $v$'s and the transformed orthogonal vectors as $u$'s. At last, let’s normalize the transformed matrix so that it becomes easier to handle the results. As a matter of fact, this is what SVD is doing. It’s basically dividing different transformations into each matrix $U$, $\Sigma$, and $V$. A more geometrical explanation of SVD can be found [here](https://gregorygundersen.com/blog/2018/12/10/svd/). We will now go into how we produce these 3 matrices.
 
 
+
+
+
+
+
+
+---
 ### Constructing SVD and Example
 ---
 ###### We note that in general there is **no exact method for computing the SVD**. However, we will now illustrate the one basic algorithm that produce the matrices listed above and use a guided example to see how it works. 
@@ -103,6 +110,9 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 2/3 & -2/3 & -1/3\\
 \end{bmatrix}$$
 
+
+
+---
 ### Edge Cases and Possible Issues
 ---
 ###### In general every real matrix, $A\in \mathbb{R}^{n\times m}$ has an SVD with real entries, and every complex matrix, $A\in \mathbb{C}^{n\times m}$  has an SVD with complex entries. Moreover, if the singular values are unique then we can also say that our SVD is unique for a given matrix. 
@@ -118,6 +128,9 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 
 ###### Now that we've illustrated the computation and special cases of SVD we will now look into its importance and application.
 
+
+
+---
 ### Numerical Analysis Applications of SVD
 ---
 #### Matrix Properties
@@ -140,15 +153,18 @@ $$A^{+} = V\Sigma^{+}U^{T}$$
 #### Orthogonal Basis
 
 
-
+---
 ### Real World Applications
 ---
 
 
 
 
-### Quick History
 
+
+---
+### Quick History
+---
 ###### For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD
 - Eugenio Beltrami and Camille Jordan found the SVD
 for simplification of bilinear forms in 1870s.

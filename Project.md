@@ -83,6 +83,4 @@ a\\
 $$
 V = begin{bmatrix}
 1/\sqrt{2} & 1/\sqrt{18} & 2/3\\
-1/\sqrt{2} & -1/\sqrt{18} & -2/3\\
-0 & 4/\sqrt{18} & -1/3\\
 \end{bmatrix}$$

@@ -23,3 +23,8 @@ $$VV^{T} = V^{T}V = I$$
 ###### These properties prevents us from working with a possible "ugly matrix" by producing matrices that are easier to handle as illustrated above. However, what is SVD actually doing? So you have a matrix A, which is the matrix you want to decompose using SVD. This is a transformation matrix that transforms a group of vectors to new space. Let’s define the original orthogonal vectors as $v$'s and the transformed orthogonal vectors as $u$'s. At last, let’s normalize the transformed matrix so that it becomes easier to handle the results. As a matter of fact, this is what SVD is doing. It’s basically dividing different transformations into each matrix $U$, $\Sigma$, and $V$. A more geometrical explanation of SVD can be found [here](https://gregorygundersen.com/blog/2018/12/10/svd/). We will now go into how we produce these 3 matrices.
 
 ### Constructing SVD and Example
+###### We will now illustrate the basic algorithm to produce the matrices listed above and use a guided example to see how it works. First we will produce the singular values $\sigma_{i}$ of our diagonal matrix $\Sigma$. Given a matrix $A$ the singula values are computed from the eigenvalues of $AA^{T}$. We see an example of this below,
+$$A = \begin{bmatrix}
+3 & 2 & 2\\
+2 & 3 & -2
+\end{bmatrix}$$

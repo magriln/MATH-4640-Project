@@ -99,13 +99,30 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 2/3 & -2/3 & -1/3\\
 \end{bmatrix}$$
 
-###### Now that we've illustrated how to produce our SVD we will now look into its importance and application.
+### Edge Cases and Faults
+
+###### In general every real matrix has an SVD with real entries, every complex matrix has an SVD with complex entries. However, there can exist SVD implementation that fail to converge
+
+
+
+
+
+
+
+
+
+###### Now that we've illustrated the computation and special cases of SVD we will now look into its importance and application.
 
 ### Numerical Analysis Applications of SVD
+#### Matrix Properties
 ###### Now from our lectures we noted a few important applications of SVD. One main benefit is its ability to compute other aspects regarding matrices that we list below:
 - **Minimum norm solution:** given a system of equations $Ax\cong b$ we can determine the following,
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
-- **Euclidean matrix norm:** Can be given by $||A|| _{2}$
+- **Euclidean matrix norm:** Can be given by $||A|| _{2} = \sigma_{max}$
+- **Euclidean condition number of matrix:** $cond_{2}(A) = \frac{\sigma_{max}}{\sigma_{min}}
+- **Rank of a matrix:** rank(A) = number of nonzero singular value, count($\sigma_{i}\neq0)
 
-- 
+#### Pseudoinverse
+###### Additionally the SVD can be used to find the **pseudoinverse** of our matrix $A$, this is given by 
+$$A^{+} = V\Sigma^{+}U^{T}$$
 

@@ -10,9 +10,9 @@
 $$A = U\Sigma V^{T}$$
 ###### These matrices are defined below:
 - U: An $m \times m$ unitary matrix 
-  - Values $u_{i}$ are known as the left singular vectors 
+  - Values $u_{i}$ are known as the left singular vectors \& UU^{\ast} = I
 - V: An $n \times n$ unitary matrix 
-  -  Values $v_{i}$ are known as the left singular vectors
+  -  Values $v_{i}$ are known as the left singular vectors \& VV^{\ast} = I
 - $\Sigma$: A $m \times n$ diagonal matrix with non-negative real numbers on the diagonal
   - Where the entries along the diagonal are denoted $\sigma_{i}$ and are usually order in decreasing order: $\sigma_{1} \geq \sigma_{2} \geq \sigma_{3} \geq \dots$
 

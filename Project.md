@@ -122,7 +122,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 - **Minimum norm solution:** given a system of equations $Ax\cong b$ we can determine the following,
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 - **Euclidean matrix norm:** Can be given by $||A|| _{2} = \sigma_{max}$
-- **Euclidean condition number of matrix:** $cond_{2}(A) = \frac{\sigma_{max}}{\sigma_{min}}
+- **Euclidean condition number of matrix:** $cond_{2}(A) = \frac{\sigma_{max}}{\sigma_{min}}$
 - **Rank of a matrix:** rank(A) = number of nonzero singular value, count($\sigma_{i}\neq0)
 - **Range of a matrix:** Given by the left singular vectors of $U$ corresponding to non-zero singular values
 - **Null space of a matrix:** Given by the right singular vectors of $V$ corresponding to the zeroed singular values.
@@ -130,7 +130,7 @@ $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 #### Pseudoinverse
 ###### Additionally the SVD can be used to find the **pseudoinverse** of our matrix $A$, this is given by 
 $$A^{+} = V\Sigma^{+}U^{T}$$
-###### Where $\Sigma^{+}$ is the pseudoinverse of our diagonal matrix, that is each pseudoinverse of our scalar $\sigma_{i}$ is defined to be $\frac{1}{sigma_{i}} for $\sigma_{i}\neq0$.
+###### Where $\Sigma^{+}$ is the pseudoinverse of our diagonal matrix, that is each pseudoinverse of our scalar $\sigma_{i}$ is defined to be $\frac{1}{sigma_{i}}$ for $\sigma_{i}\neq0$.
 ###### We note that the $A^{+}$ exists regardless whether or not our matrix is square or has full rank. Additionaly, if $A$ is square and nonsingular we have that $A^{+}=A^{-1}.
 ###### The Pseudoinverse is very useful in computing the minimum norm solution, that is $Ax\cong b$ is given by $x=A^{+}b
 

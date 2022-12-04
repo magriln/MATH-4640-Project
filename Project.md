@@ -27,4 +27,13 @@ $$VV^{T} = V^{T}V = I$$
 $$A = \begin{bmatrix}
 3 & 2 & 2\\
 2 & 3 & -2
+\end{bmatrix}\ \ \ AA^{T} = \begin{bmatrix}
+17 & 8\\
+8 & 17
+\end{bmatrix}$$
+Now we have that the eignevalues of this matrix are computed from the following, $det(AA^{T} - \lambda\I) = \lambda^{2} - 34\lambda + 225 = (\lambda - 25)(\lambda - 9).\\
+From this we have that our eigenvalues and subsequent singular values are given as follows $\sigma_{1} = \sqrt{25} = 5$ and $\sigma_{2} = \sqrt{9} = 3$, and thus we have the following.
+$$\Sigma  = \begin{bmatrix}
+5 & 0 & 0\\
+0 & 3 & 0
 \end{bmatrix}$$

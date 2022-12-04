@@ -63,7 +63,8 @@ $$v_{2} = \begin{bmatrix}
 -1/\sqrt{18}\\
 4/\sqrt{18}
 \end{bmatrix}$$
-###### Now for the last eigenvector we need a unit vector that is perpendicular or orthogonal to both $v_{1}$ and $v_{2}$. In this case we to be perpendicular to $v_{1} = \begin{bmatrix} a\\ b\\ c \end{bmatrix}$ 
+###### Now for the last eigenvector we need a unit vector that is perpendicular or orthogonal to both $v_{1}$ and $v_{2}$. In this case to be perpendicular to 
+$$v_{1} = \begin{bmatrix} a\\ b\\ c \end{bmatrix}$$
 ###### we need $a = -b$. Moreover, we need $v_{2}^{T}v_{3} = 0$. From these conditions we have that,
 $$v_{3} = \begin{bmatrix}
 a\\

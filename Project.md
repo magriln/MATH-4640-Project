@@ -4,8 +4,9 @@
 ###### Name: Niv Magril
 ###### Topic: 11
 ###### Title: The SVD. What is it, what it can be used for, how it can be computed.
-----
+---
 ### Base Idea and Introduction
+---
 ###### Singular Value Decomposition is as simple as its name, its a method of decomposing matrix into matrices composed of singular values. Of course it is a little more intuitvie than that. Given a matrix, $A \in \mathbb{R}^{m \times n}$, we can factorize this matrix into the following form,
 $$A = U\Sigma V^{T}$$
 ###### These matrices are defined below:
@@ -24,6 +25,7 @@ $$VV^{T} = V^{T}V = I$$
 
 
 ### Constructing SVD and Example
+---
 ###### We note that in general there is **no exact method for computing the SVD**. However, we will now illustrate the one basic algorithm that produce the matrices listed above and use a guided example to see how it works. 
 ###### First we will produce the singular values $\sigma_{i}$ of our diagonal matrix $\Sigma$. Given a matrix $A$ the singula values are computed from the eigenvalues of $AA^{T}$. We see an example of this below,
 $$A = \begin{bmatrix}
@@ -102,7 +104,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 \end{bmatrix}$$
 
 ### Edge Cases and Possible Issues
-
+---
 ###### In general every real matrix, $A\in \mathbb{R}^{n\times m}$ has an SVD with real entries, and every complex matrix, $A\in \mathbb{C}^{n\times m}$  has an SVD with complex entries. Moreover, if the singular values are unique then we can also say that our SVD is unique for a given matrix. 
 ##### POSSIBLY ADD MORE/ PROOF OF EXISTENCE?
 
@@ -117,6 +119,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 ###### Now that we've illustrated the computation and special cases of SVD we will now look into its importance and application.
 
 ### Numerical Analysis Applications of SVD
+---
 #### Matrix Properties
 ###### Now from our lectures we noted a few important applications of SVD. One main benefit is its ability to compute other aspects regarding matrices that we list below:
 - **Minimum norm solution:** given a system of equations $Ax\cong b$ we can determine the following,
@@ -130,9 +133,16 @@ $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 #### Pseudoinverse
 ###### Additionally the SVD can be used to find the **pseudoinverse** of our matrix $A$, this is given by 
 $$A^{+} = V\Sigma^{+}U^{T}$$
-###### Where $\Sigma^{+}$ is the pseudoinverse of our diagonal matrix, that is each pseudoinverse of our scalar $\sigma_{i}$ is defined to be $\frac{1}{sigma_{i}}$ for $\sigma_{i}\neq0$.
+###### Where $\Sigma^{+}$ is the pseudoinverse of our diagonal matrix, that is each pseudoinverse of our scalar $\sigma_{i}$ is defined to be $\frac{1}{\sigma_{i}}$ for $\sigma_{i}\neq0$.
 ###### We note that the $A^{+}$ exists regardless whether or not our matrix is square or has full rank. Additionaly, if $A$ is square and nonsingular we have that $A^{+}=A^{-1}.
 ###### The Pseudoinverse is very useful in computing the minimum norm solution, that is $Ax\cong b$ is given by $x=A^{+}b
+
+#### Orthogonal Basis
+
+
+
+### Real World Applications
+---
 
 
 

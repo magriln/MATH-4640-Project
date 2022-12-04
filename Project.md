@@ -64,7 +64,11 @@ $$v_{2} = \begin{bmatrix}
 4/\sqrt{18}
 \end{bmatrix}$$
 ###### Now for the last eigenvector we need a unit vector that is perpendicular or orthogonal to both $v_{1}$ and $v_{2}$. In this case to be perpendicular to 
-$$v_{1} = \begin{bmatrix} a\\ b\\ c \end{bmatrix}$$
+$$v_{1} = \begin{bmatrix} 
+a\\
+b\\
+c 
+\end{bmatrix}$$
 ###### we need $a = -b$. Moreover, we need $v_{2}^{T}v_{3} = 0$. From these conditions we have that,
 $$v_{3} = \begin{bmatrix}
 a\\
@@ -74,4 +78,11 @@ a\\
 2/3\\
 -2/3\\
 -1/3
+\end{bmatrix}$$
+###### Thus we have all of our orthogonal eigenvectors and we can define the following,
+$$
+V = begin{bmatrix}
+1/\sqrt{2} & 1/\sqrt{18} & 2/3\\
+1/\sqrt{2} & -1/\sqrt{18} & -2/3\\
+0 & 4/\sqrt{18} & -1/3\\
 \end{bmatrix}$$

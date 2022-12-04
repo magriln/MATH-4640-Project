@@ -22,8 +22,10 @@ $$UU^{T} = U^{T}U = I$$
 $$VV^{T} = V^{T}V = I$$
 ###### These properties prevents us from working with a possible "ugly matrix" by producing matrices that are easier to handle as illustrated above. However, what is SVD actually doing? So you have a matrix A, which is the matrix you want to decompose using SVD. This is a transformation matrix that transforms a group of vectors to new space. Let’s define the original orthogonal vectors as $v$'s and the transformed orthogonal vectors as $u$'s. At last, let’s normalize the transformed matrix so that it becomes easier to handle the results. As a matter of fact, this is what SVD is doing. It’s basically dividing different transformations into each matrix $U$, $\Sigma$, and $V$. A more geometrical explanation of SVD can be found [here](https://gregorygundersen.com/blog/2018/12/10/svd/). We will now go into how we produce these 3 matrices.
 
+
 ### Constructing SVD and Example
-###### We will now illustrate the basic algorithm to produce the matrices listed above and use a guided example to see how it works. First we will produce the singular values $\sigma_{i}$ of our diagonal matrix $\Sigma$. Given a matrix $A$ the singula values are computed from the eigenvalues of $AA^{T}$. We see an example of this below,
+###### We note that in general there is **no exact method for computing the SVD**. However, we will now illustrate the one basic algorithm that produce the matrices listed above and use a guided example to see how it works. 
+###### First we will produce the singular values $\sigma_{i}$ of our diagonal matrix $\Sigma$. Given a matrix $A$ the singula values are computed from the eigenvalues of $AA^{T}$. We see an example of this below,
 $$A = \begin{bmatrix}
 3 & 2 & 2\\
 2 & 3 & -2
@@ -101,7 +103,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 
 ### Edge Cases and Faults
 
-###### In general every real matrix, $A\in \mathbb{R}^{n\times m}$ has an SVD with real entries, and every complex matrix, $A\in \mathbb{C}^{n\times m}$  has an SVD with complex entries. However, there can exist SVD implementation that fail to converge
+###### In general every real matrix, $A\in \mathbb{R}^{n\times m}$ has an SVD with real entries, and every complex matrix, $A\in \mathbb{C}^{n\times m}$  has an SVD with complex entries. Moreover, if the singular values are unique then we can also say that our SVD is unique for a given matrix. 
 
 
 
@@ -121,8 +123,28 @@ $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 - **Euclidean matrix norm:** Can be given by $||A|| _{2} = \sigma_{max}$
 - **Euclidean condition number of matrix:** $cond_{2}(A) = \frac{\sigma_{max}}{\sigma_{min}}
 - **Rank of a matrix:** rank(A) = number of nonzero singular value, count($\sigma_{i}\neq0)
+- **Range of a matrix:** Given by the left singular vectors of $U$ corresponding to non-zero singular values
+- **Null space of a matrix:** Given by the right singular vectors of $V$ corresponding to the zeroed singular values.
 
 #### Pseudoinverse
 ###### Additionally the SVD can be used to find the **pseudoinverse** of our matrix $A$, this is given by 
 $$A^{+} = V\Sigma^{+}U^{T}$$
 
+
+
+
+### Quick History
+
+###### For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD
+- Eugenio Beltrami and Camille Jordan found the SVD
+for simplification of bilinear forms in 1870s.
+- Jordan obtained geometric interpretation of the largest singular value
+- J. J. Sylvester wrote two papers on the SVD in 1889.
+  - He found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions.
+- Erhard Schmidt (1876-1959) discovered the SVD for function spaces while investigating integral equations.
+  - His problem was to find the best rank k approximations to A of the form
+    $$u_{1}v^{t}_{1} + \cdots + u_{k}v_{k}^{t}.$$
+- Autonne found the SVD for complex matrices in 1913.
+- Eckhart and Young extended SVD to rectangular matrices in 1936.
+- Golub and Kahan introduced SVD in numerical analysis in 1965 .
+- Golub proposed an algorithm for SVD in 1970.

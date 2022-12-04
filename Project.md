@@ -101,9 +101,10 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 2/3 & -2/3 & -1/3\\
 \end{bmatrix}$$
 
-### Edge Cases and Faults
+### Edge Cases and Possible Issues
 
 ###### In general every real matrix, $A\in \mathbb{R}^{n\times m}$ has an SVD with real entries, and every complex matrix, $A\in \mathbb{C}^{n\times m}$  has an SVD with complex entries. Moreover, if the singular values are unique then we can also say that our SVD is unique for a given matrix. 
+##### POSSIBLY ADD MORE/ PROOF OF EXISTENCE?
 
 
 
@@ -129,6 +130,9 @@ $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 #### Pseudoinverse
 ###### Additionally the SVD can be used to find the **pseudoinverse** of our matrix $A$, this is given by 
 $$A^{+} = V\Sigma^{+}U^{T}$$
+###### Where $\Sigma^{+}$ is the pseudoinverse of our diagonal matrix, that is each pseudoinverse of our scalar $\sigma_{i}$ is defined to be $\frac{1}{sigma_{i}} for $\sigma_{i}\neq0$.
+###### We note that the $A^{+}$ exists regardless whether or not our matrix is square or has full rank. Additionaly, if $A$ is square and nonsingular we have that $A^{+}=A^{-1}.
+###### The Pseudoinverse is very useful in computing the minimum norm solution, that is $Ax\cong b$ is given by $x=A^{+}b
 
 
 

@@ -81,6 +81,8 @@ a\\
 \end{bmatrix}$$
 ###### Thus we have all of our orthogonal eigenvectors and we can define the following,
 $$
-V = begin{bmatrix}
+V = \begin{bmatrix}
 1/\sqrt{2} & 1/\sqrt{18} & 2/3\\
+1/\sqrt{2} & -1/\sqrt{18} & -2/3\\
+0 & 4/\sqrt{18} & -1/3\\
 \end{bmatrix}$$

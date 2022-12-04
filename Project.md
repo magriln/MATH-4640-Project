@@ -32,9 +32,16 @@ $$A = \begin{bmatrix}
 8 & 17
 \end{bmatrix}$$
 
-###### Now we have that the eignevalues of this matrix are computed from the following, $det(AA^{T} - \lambda\I) = \lambda^{2} - 34\lambda + 225 = (\lambda - 25)(\lambda - 9)$.\\
+###### Now we have that the eignevalues of this matrix are computed from the following, $det(AA^{T} - \lambda I) = \lambda^{2} - 34\lambda + 225 = (\lambda - 25)(\lambda - 9)$.
 ###### From this we have that our eigenvalues and subsequent singular values are given as follows $\sigma_{1} = \sqrt{25} = 5$ and $\sigma_{2} = \sqrt{9} = 3$, and thus we have the following.
 $$\Sigma  = \begin{bmatrix}
 5 & 0 & 0\\
 0 & 3 & 0
 \end{bmatrix}$$
+###### Now we find the right singular vectors, the columns of V, by finding an orthonormal set of eigenvectors of $A^{T}A$. Now the eigenvalues of $A^{T}A$ are also given by the eigenvalues of $AA^{T}$. Now since $AA^{T}$ is symmetrix we know that the eigenvectors will be orthogonal. So now we compute the eigenvector for $\lambda_{1} = 25$,
+
+$$A^{T}A - \lambda_{1}I = \begin{bmatrix}
+-12 & 12 & 2\\
+12 & -12 & -2\\
+2 & -2 & -17\\
+\end{bmatrix}$$ 

@@ -101,7 +101,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 
 ### Edge Cases and Faults
 
-###### In general every real matrix has an SVD with real entries, every complex matrix has an SVD with complex entries. However, there can exist SVD implementation that fail to converge
+###### In general every real matrix, $A\in \mathbb{R}^{n\times m}$ has an SVD with real entries, and every complex matrix, $A\in \mathbb{C}^{n\times m}$  has an SVD with complex entries. However, there can exist SVD implementation that fail to converge
 
 
 

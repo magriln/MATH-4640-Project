@@ -189,7 +189,7 @@ for simplification of bilinear forms in 1870s.
 - J. J. Sylvester wrote two papers on the SVD in 1889.
   - He found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions.
 - Erhard Schmidt (1876-1959) discovered the SVD for function spaces while investigating integral equations.
-  - His problem was to find the best rank k approximations to A of the form, $u_{1}v^{t}_{1} + \cdots + u_{k}v_{k}^{t}.$
+  - His problem was to find the best rank k approximations to A of the form, $u_{1}v_{1}^{t} + + u_{k}v_{k}^{t}$.
 - Autonne found the SVD for complex matrices in 1913.
 - Eckhart and Young extended SVD to rectangular matrices in 1936.
 - Golub and Kahan introduced SVD in numerical analysis in 1965 .

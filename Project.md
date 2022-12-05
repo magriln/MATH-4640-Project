@@ -158,16 +158,18 @@ $$A = U\Sigma V^{T} = \sigma_{1}E_{1} + \sigma_{2}E_{2} + \cdots + \sigma_{n}E_{
 ###### where $E_{i} = u_{i}v_{i}^{T}$. Now we see that each $E_{i}$ has a rank of 1 and can be stored using only $m+n$ storage locations. Thus the product $E_{i}x$ can be computed using only $m+n$ multiplication. Condensed approximations of A are obtained by omitting from summation terms corresponding to small singular values.
 
 ###### Below we show a step by step process of computing this rank-k approximation:
-1. Compute the SVD of our matrix $A = U\Sigma V^{T}
+1. Compute the SVD of our matrix $A = U\Sigma V^{T}$
 2. Keep only the top $k$ right singular vectors: set $V_{k}^{T}$ equal to the first $k$ rows of our matrix $V^{T}$
 3. Keep only the top $k$ left singular vectors: set $U_{k}$ equal to the first $k$ columns of U
 4. Keep only the top $k$ singular values: set $\Sigma_{k}$ equal to the first $k$ rows and columns of $\Sigma$, corresponding to the $k$ largest singular values of $A$.
-5. The rank-k approximation is then given by $A_{k} = U_{k}\Sigma_{k}V_{k}^{T}
+5. The rank-k approximation is then given by $A_{k} = U_{k}\Sigma_{k}V_{k}^{T}$
 
 ###### These approximation come in handy for image processing, data compression, information retreival, and more topics we will go over in the following section.
 
 #### Total Least Squares
-
+###### In general least squares is applicable when our right hand side, b, is subject to some random error, but our matrix $A$ is known accurately. However, in the case that $A$ is also subject to error we can apply total least square. 
+###### Computing the SVD of $[A, b]$ gives us the total least squares solution by minimizing the orthogonal distance between model and data. The solution turns out to be the right-singular vector, $v_{m}$, of $A$ corresponding to the smallest singular value.
+###### More specificaly, singular value decomposition can be used to find a unique solution to total least squares problems.
 ---
 ### Real World Applications
 ---
@@ -192,3 +194,10 @@ for simplification of bilinear forms in 1870s.
 - Eckhart and Young extended SVD to rectangular matrices in 1936.
 - Golub and Kahan introduced SVD in numerical analysis in 1965 .
 - Golub proposed an algorithm for SVD in 1970.
+
+
+https://en.wikipedia.org/wiki/Singular_value_decomposition#Total_least_squares_minimization
+https://math.mit.edu/~gs/linearalgebra/SVD_Slides.pdf
+https://people.duke.edu/~hpgavin/SystemID/CourseNotes/TotalLeastSquares.pdf
+https://web.stanford.edu/class/cs168/l/l9.pdf
+

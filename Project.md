@@ -150,8 +150,23 @@ $$A^{+} = V\Sigma^{+}U^{T}$$
 ###### We note that the $A^{+}$ exists regardless whether or not our matrix is square or has full rank. Additionaly, if $A$ is square and nonsingular we have that $A^{+}=A^{-1}.
 ###### The Pseudoinverse is very useful in computing the minimum norm solution, that is $Ax\cong b$ is given by $x=A^{+}b
 
-#### Orthogonal Basis
+#### Lower-Rank Matrix Approximation
+###### Suppose we want to best approximate a matrix A by a rank-k matrix. This is where the SVD comes in handy. Our singular value decomposition can also be written in the form
 
+
+$$A = U\Sigma V^{T} = \sigma_{1}E_{1} + \sigma_{2}E_{2} + \cdots + \sigma_{n}E_{n},$$
+###### where $E_{i} = u_{i}v_{i}^{T}$. Now we see that each $E_{i}$ has a rank of 1 and can be stored using only $m+n$ storage locations. Thus the product $E_{i}x$ can be computed using only $m+n$ multiplication. Condensed approximations of A are obtained by omitting from summation terms corresponding to small singular values.
+
+###### Below we show a step by step process of computing this rank-k approximation:
+1. Compute the SVD of our matrix $A = U\Sigma V^{T}
+2. Keep only the top $k$ right singular vectors: set $V_{k}^{T}$ equal to the first $k$ rows of our matrix $V^{T}$
+3. Keep only the top $k$ left singular vectors: set $U_{k}$ equal to the first $k$ columns of U
+4. Keep only the top $k$ singular values: set $\Sigma_{k}$ equal to the first $k$ rows and columns of $\Sigma$, corresponding to the $k$ largest singular values of $A$.
+5. The rank-k approximation is then given by $A_{k} = U_{k}\Sigma_{k}V_{k}^{T}
+
+###### These approximation come in handy for image processing, data compression, information retreival, and more topics we will go over in the following section.
+
+#### Total Least Squares
 
 ---
 ### Real World Applications

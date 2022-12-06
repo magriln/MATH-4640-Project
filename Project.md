@@ -139,7 +139,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 - **Euclidean matrix norm:** Can be given by $||A|| _{2} = \sigma_{max}$
 - **Euclidean condition number of matrix:** $cond_{2}(A) = \frac{\sigma_{max}}{\sigma_{min}}$
-- **Rank of a matrix:** rank(A) = number of nonzero singular value, count($\sigma_{i}\neq0)
+- **Rank of a matrix:** rank(A) = number of nonzero singular value, count($\sigma_{i}\neq 0$)
 - **Range of a matrix:** Given by the left singular vectors of $U$ corresponding to non-zero singular values
 - **Null space of a matrix:** Given by the right singular vectors of $V$ corresponding to the zeroed singular values.
 
@@ -186,11 +186,14 @@ $$A = U\Sigma V^{T} = \sigma_{1}E_{1} + \sigma_{2}E_{2} + \cdots + \sigma_{n}E_{
 ###### By applying the process of Singular Value Decomposition to images by using pixel saturation matrices for grayscale or full color images, we can compress the storage size of an image even while retaining the number of pixels. We have isolated the least important pieces of information that are stored in the images and have removed them methodically, leaving only the most important components of the images. This process of removing the smallest singular values from the saturation matrices allows us to retain as much of the image quality as possible.
 
 #### Face Recognition
-###### Widely known as model analysis, where non-scaled mode shapes can be determined with non-scaled mode shapes
+###### Widely known as model analysis, where non-scaled mode shapes can be determined with non-scaled mode shapes. Using EigenFaces for Recognition of Faces is a quintessential technique in computer vision.Sirovich and Kirby (1987) showed that PCA could be used on a collection of face images to form a set of basis features.
+PCA is at the heart of the EigenFaces approach as the set of EigenFaces is generated using PCA. Eigenface approach reduces statistical complexity in face image representation. 
+#### INSERT IMAGE
 
 
-#### Numerical Weather Prediction
-###### Helpful where mathematical modes of the atmosphere are used weather prediction based on present weather condition.
+
+#### Quantitative Finance
+###### 
 
 #### Web Searching
 ###### Search engines like Google use enormous matrices of cross referencing checking what words are on each page. Upon a Google search, the higher ranks of this matrix usually go to pages with your key words that have lots of links to them. But there are billions of pages out there, and as we saw in our class storing a billion by billion matrix is trouble. This is not considering querying through it.

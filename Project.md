@@ -178,7 +178,23 @@ $$A = U\Sigma V^{T} = \sigma_{1}E_{1} + \sigma_{2}E_{2} + \cdots + \sigma_{n}E_{
 ---
 ###### Singular Value Decomposition has been not been hoarded only for the domain of numerical analysis but is applicable in multiple other fields. We illustrate some of these real world applications below
 
-#### 
+#### Image Processing and Compression
+###### The process of Singular Value Decomposition can be used in many applications, including watermarking an image, computing weighted least squares, and optimal prediction. Here we will consider how this process could be used to produce reduced image sizes. We begin by understanding that large images are formed by correspondingly large matrices, hence requiring a sizable amount of memory to store the image. By rewriting the image in its broken-down form and removing the smaller singular values, we can form smaller matrices which would in turn require less memory storage. We would lose some refinement with each loss of a singular value, but overall, we would retain the overall image feature. An example of this can be seen below.
+#### INSERT IMAGE
+###### The process of SVD can also be expanded to full color images. Each pixel in full color image has color saturation representation values of 0 to 255 for red, green, and blue. This adds complexity to the image, which requires a greater amount of storage space used to save a particular image. By showing the representation of each color relative to the full color image, we are able to see the amount of contribution each color has to each pixel. In order to implement the SVD process we will have to first separate the full color image into its red, green, and blue layers, as each of these three colors has its own matrix of information for the image. We will remove the smallest singular values from each of the color matrices, and then we will reconstruct the full color image using the modified color matrices.
+#### INSERT IMAGE
+###### By applying the process of Singular Value Decomposition to images by using pixel saturation matrices for grayscale or full color images, we can compress the storage size of an image even while retaining the number of pixels. We have isolated the least important pieces of information that are stored in the images and have removed them methodically, leaving only the most important components of the images. This process of removing the smallest singular values from the saturation matrices allows us to retain as much of the image quality as possible.
+
+#### Face Recognition
+###### Widely known as model analysis, where non-scaled mode shapes can be determined with non-scaled mode shapes
+
+
+#### Numerical Weather Prediction
+###### Helpful where mathematical modes of the atmosphere are used weather prediction based on present weather condition.
+
+#### Web Searching
+###### Search engines like Google use enormous matrices of cross referencing checking what words are on each page. Upon a Google search, the higher ranks of this matrix usually go to pages with your key words that have lots of links to them. But there are billions of pages out there, and as we saw in our class storing a billion by billion matrix is trouble. This is not considering querying through it.
+###### SVD comes in handy in this application as well. In searching, we really only care about the main directions that the Web is taking, the top results. So the first few singular values create a very good approximation for the enormous matrix, can be searched relatively quickly and provide compression ratios of millions to one. 
 
 
 
@@ -212,4 +228,6 @@ https://math.mit.edu/~gs/linearalgebra/SVD_Slides.pdf
 https://people.duke.edu/~hpgavin/SystemID/CourseNotes/TotalLeastSquares.pdf
 https://web.stanford.edu/class/cs168/l/l9.pdf
 https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_svd_apps.html
-
+https://staff.imsa.edu/~fogel/LinAlg/PDF/50%20Application%20of%20the%20SVD.pdf
+http://eceweb1.rutgers.edu/~orfanidi/aosp/aosp-ch15.pdf
+https://www.lagrange.edu/academics/undergraduate/undergraduate-research/citations/18-Citations2020.Compton.pdf

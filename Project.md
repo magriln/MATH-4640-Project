@@ -170,11 +170,15 @@ $$A = U\Sigma V^{T} = \sigma_{1}E_{1} + \sigma_{2}E_{2} + \cdots + \sigma_{n}E_{
 ###### In general least squares is applicable when our right hand side, b, is subject to some random error, but our matrix $A$ is known accurately. However, in the case that $A$ is also subject to error we can apply total least square. 
 ###### Computing the SVD of $[A, b]$ gives us the total least squares solution by minimizing the orthogonal distance between model and data. The solution turns out to be the right-singular vector, $v_{m}$, of $A$ corresponding to the smallest singular value.
 ###### More specificaly, singular value decomposition can be used to find a unique solution to total least squares problems.
+
+
+###### ADD MORE EXAMPLES
 ---
 ### Real World Applications
 ---
+###### Singular Value Decomposition has been not been hoarded only for the domain of numerical analysis but is applicable in multiple other fields. We illustrate some of these real world applications below
 
-
+#### 
 
 
 
@@ -195,9 +199,17 @@ for simplification of bilinear forms in 1870s.
 - Golub and Kahan introduced SVD in numerical analysis in 1965 .
 - Golub proposed an algorithm for SVD in 1970.
 
+---
+### Coding SVD
+---
+
+---
+### References
+---
 
 https://en.wikipedia.org/wiki/Singular_value_decomposition#Total_least_squares_minimization
 https://math.mit.edu/~gs/linearalgebra/SVD_Slides.pdf
 https://people.duke.edu/~hpgavin/SystemID/CourseNotes/TotalLeastSquares.pdf
 https://web.stanford.edu/class/cs168/l/l9.pdf
+https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_svd_apps.html
 

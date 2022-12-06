@@ -38,6 +38,7 @@ These properties prevents us from working with a possible "ugly matrix" by produ
 We note that in general there is **no exact method for computing the SVD**. However, we will now illustrate the one basic algorithm that produce the matrices listed above and use a guided example to see how it works. 
 
 First we will produce the singular values $\sigma_{i}$ of our diagonal matrix $\Sigma$. Given a matrix $A$ the singula values are computed from the eigenvalues of $AA^{T}$. We see an example of this below,
+
 $$A = \begin{bmatrix}
 3 & 2 & 2\\
 2 & 3 & -2
@@ -46,13 +47,15 @@ $$A = \begin{bmatrix}
 8 & 17
 \end{bmatrix}$$
 
-Now we have that the eignevalues of this matrix are computed from the following, $det(AA^{T} - \lambda I) = \lambda^{2} - 34\lambda + 225 = (\lambda - 25)(\lambda - 9)$.
+Now we have that the eignevalues of this matrix are computed from the following,
+$det(AA^{T} - \lambda I) = \lambda^{2} - 34\lambda + 225 = (\lambda - 25)(\lambda - 9)$.
 
 From this we have that our eigenvalues and subsequent singular values are given as follows $\sigma_{1} = \sqrt{25} = 5$ and $\sigma_{2} = \sqrt{9} = 3$, and thus we have the following.
-$$\Sigma  = \begin{bmatrix}
+
+$$ \Sigma  = \begin{bmatrix}
 5 & 0 & 0\\
 0 & 3 & 0
-\end{bmatrix}$$
+\end{bmatrix} $$
 
 Now we find the right singular vectors, the columns of V, by finding an orthonormal set of eigenvectors of $A^{T}A$. Now the eigenvalues of $A^{T}A$ are also given by the eigenvalues of $AA^{T}$. Now since $AA^{T}$ is symmetrix we know that the eigenvectors will be orthogonal. So now we compute the eigenvector for $\lambda_{1} = 25$,
 
@@ -63,18 +66,18 @@ $$A^{T}A - \lambda_{1}I = \begin{bmatrix}
 \end{bmatrix}$$ 
 
 Reducing this matrix will give us our first eigenvector which is given by,
+
 $$v_{1} = \begin{bmatrix}
 1/\sqrt{2}\\
 1/\sqrt{2}\\
-0
-\end{bmatrix}$$
+0\end{bmatrix}$$
 
 Similarly we perform the same computation for $\lambda_{2} = 9$.
+
 $$A^{T}A - \lambda_{2}I = \begin{bmatrix}
 4 & 12 & 2\\
 12 & 4 & -2\\
-2 & -2 & -1\\
-\end{bmatrix}$$ 
+2 & -2 & -1\end{bmatrix}$$ 
 
 Reducing this matrix will give us our first eigenvector which is given by,
 $$v_{2} = \begin{bmatrix}
@@ -84,13 +87,14 @@ $$v_{2} = \begin{bmatrix}
 \end{bmatrix}$$
 
 Now for the last eigenvector we need a unit vector that is perpendicular or orthogonal to both $v_{1}$ and $v_{2}$. In this case to be perpendicular to 
+
 $$v_{1} = \begin{bmatrix} 
 a\\
 b\\
-c 
-\end{bmatrix}$$
+c \end{bmatrix}$$
 
 we need $a = -b$. Moreover, we need $v_{2}^{T}v_{3} = 0$. From these conditions we have that,
+
 $$v_{3} = \begin{bmatrix}
 a\\
 -a\\
@@ -102,14 +106,15 @@ a\\
 \end{bmatrix}$$
 
 Thus we have all of our orthogonal eigenvectors and we can define the following,
-$$
-V = \begin{bmatrix}
+
+$$V = \begin{bmatrix}
 1/\sqrt{2} & 1/\sqrt{18} & 2/3\\
 1/\sqrt{2} & -1/\sqrt{18} & -2/3\\
 0 & 4/\sqrt{18} & -1/3\\
 \end{bmatrix}$$
 
 Finally we can compute $U$ through the formula $\sigma u_{i} = Av_{i}$ or $u_{i} = \frac{1}{\sigma}Av_{i}$. Doing so we can compute $U$ and we can find our full Singular Value Decomposition below,
+
 $$A = U\Sigma V^{T} = \begin{bmatrix}
 1/\sqrt{2} & 1/\sqrt{2}\\
 1/\sqrt{2} & -1/\sqrt{2}

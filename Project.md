@@ -186,8 +186,7 @@ $$A = U\Sigma V^{T} = \sigma_{1}E_{1} + \sigma_{2}E_{2} + \cdots + \sigma_{n}E_{
 ###### By applying the process of Singular Value Decomposition to images by using pixel saturation matrices for grayscale or full color images, we can compress the storage size of an image even while retaining the number of pixels. We have isolated the least important pieces of information that are stored in the images and have removed them methodically, leaving only the most important components of the images. This process of removing the smallest singular values from the saturation matrices allows us to retain as much of the image quality as possible.
 
 #### Face Recognition
-###### Widely known as model analysis, where non-scaled mode shapes can be determined with non-scaled mode shapes. Using EigenFaces for Recognition of Faces is a quintessential technique in computer vision.Sirovich and Kirby (1987) showed that PCA could be used on a collection of face images to form a set of basis features.
-PCA is at the heart of the EigenFaces approach as the set of EigenFaces is generated using PCA. Eigenface approach reduces statistical complexity in face image representation. 
+###### 
 #### INSERT IMAGE
 
 

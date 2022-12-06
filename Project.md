@@ -139,7 +139,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 - **Euclidean matrix norm:** Can be given by $||A|| _{2} = \sigma_{max}$
 - **Euclidean condition number of matrix:** $cond_{2}(A) = \frac{\sigma_{max}}{\sigma_{min}}$
-- **Rank of a matrix:** rank(A) = number of nonzero singular value, count($\sigma_{i}\neq 0$)
+- **Rank of a matrix:** rank(A) = number of nonzero singular value, count$(\sigma_{i} \neq 0)$
 - **Range of a matrix:** Given by the left singular vectors of $U$ corresponding to non-zero singular values
 - **Null space of a matrix:** Given by the right singular vectors of $V$ corresponding to the zeroed singular values.
 

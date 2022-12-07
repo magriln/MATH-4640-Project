@@ -211,7 +211,7 @@ Singular Value Decomposition has been not been hoarded only for the domain of nu
 
  Here we consider how SVD can be used to produce reduced image sizes. We begin by understanding that large images are formed by correspondingly large matrices, requiring alot of memory to store the image. By rewriting the image in its pixel by pixel form and removing the smaller singular values, we can form smaller matrices which would require less memory storage. We would lose some refinement with each loss of a singular value, but we would retain the overall image feature. An example of this can be seen below.
 
-![[Image Processing.png](https://github.com/magriln/MATH-4640-Project/blob/e4f6bd13b94cffdfdcfe5cbb496f0c56ab90d8d1/Image%20Processing.png)](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/GrayscaleSVD.png)
+![Image Processing.png](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/GrayscaleSVD.png)
 <div align="center">
 Figure 1: Illustrating Image Compression by removal of Singular Values and Subsequent Pixels</div>
 
@@ -224,7 +224,7 @@ Figure 2: Analyzing the Effect of SVD on Grayscale Saturation</div>
   
 Finally within the domain of grayscale images we can see how the number of pixels and their respective saturation can be combined to illustrate the full effect of SVD on image compression.
   
-![total](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageValues.png)
+![total](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageValues.png )
 <div align="center">
 Figure 3: Comparing Singular Value Removal in Regards to Pixel Count and Saturation</div>
 

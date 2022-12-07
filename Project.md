@@ -5,25 +5,33 @@
 ###### Topic: 11
 ###### Title: The SVD. What is it, what it can be used for, how it can be computed.
 ---
+# Table of Contents
+1. [Quick History](#history)
+2. [Base Idea and Introduction](#introduction)
+3. [Constructing SVD and Example](#example)
+4. [Numerical Analysis Applications of SVD](#analysis)
+    - [Matrix Properties](#matrices)
+    - [Pseudoinverse](#pseudoinverse)
+    - [Lower-Rank Matrix Approximation](#lower)
+    - [Total Least Squares](#total)
+6. [Real World Applications](#world)
+    - [Image Processing and Compression](#image)
+    - [Facial Recognition](#face)
+    - [Quantitative Finance](#quant)
+    - [Web Searching](#web)
+8. [Coding SVD](#coding)
+9. [References](#references)
 
-### Quick History
+
+### Quick History<a name="history"></a>
 
 
-For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD
-- Eugenio Beltrami and Camille Jordan found the SVD
-for simplification of bilinear forms in 1870s.
-- Jordan obtained geometric interpretation of the largest singular value
-- J. J. Sylvester wrote two papers on the SVD in 1889.
-  - He found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions.
-- Erhard Schmidt (1876-1959) discovered the SVD for function spaces while investigating integral equations.
-  - His problem was to find the best rank k approximations to A of the form, $u_{1}v_{1}^{t} + \cdots + u_{k}v_{k}^{t}$.
-- Autonne found the SVD for complex matrices in 1913.
-- Eckhart and Young extended SVD to rectangular matrices in 1936.
-- Golub and Kahan introduced SVD in numerical analysis in 1965 .
-- Golub proposed an algorithm for SVD in 1970.
+For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD Eugenio Beltrami and Camille Jordan found the SVD for simplification of bilinear forms in 1870s. Jordan went on and obtained geometric interpretation of the largest singular value. Next J. J. Sylvester wrote two papers on the SVD in 1889. In these papers he found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions. This was followed by Erhard Schmidt (1876-1959) who discovered the SVD for function spaces while investigating integral equations. The main problem he was investigating was finding the best rank k approximations to $A$ of the form, $u_{1}v_{1}^{t} + \cdots + u_{k}v_{k}^{t}$.
+
+After a few years we had Autonne who found the SVD for complex matrices in 1913. This was succeeded by Eckhart and Young who managed to extend SVD to rectangular matrices in 1936. Then we witnessed Golub and Kahan introducing SVD in numerical analysis in 1965, the main reason we highlight SVD in this presentation. Finally, Golub expanded on his numerical analysis insights by proposing an algorithm for SVD in 1970.
 
 
-### Base Idea and Introduction
+### Base Idea and Introduction<a name="introduction"></a>
 Singular Value Decomposition is as simple as its name, its a method of decomposing matrix into matrices composed of singular values. Of course it is a little more intuitvie than that. Given a matrix, $A \in \mathbb{R}^{m \times n}$, we can factorize this matrix into the following form,
 $$A = U\Sigma V^{T}$$
 These matrices are defined below:
@@ -50,7 +58,7 @@ These properties prevents us from working with a possible "ugly matrix" by produ
 
 
 
-### Constructing SVD and Example
+### Constructing SVD and Example<a name="example"></a>
 
 We note that in general there is **no exact method for computing the SVD**. However, we will now illustrate the one basic algorithm that produce the matrices listed above and use a guided example to see how it works. 
 
@@ -149,9 +157,9 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 
 
 
-### Numerical Analysis Applications of SVD
+### Numerical Analysis Applications of SVD<a name="analysis"></a>
 
-#### Matrix Properties
+#### Matrix Properties<a name="matrices"></a>
 Below we note a few important applications of SVD in regards to linear algebra and numberical analysis. One main benefit is its ability to compute other aspects regarding matrices that we list below:
 - **Minimum norm solution:** given a system of equations $Ax\cong b$ we can determine the following,
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
@@ -161,7 +169,7 @@ $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 - **Range of a matrix:** Given by the left singular vectors of $U$ corresponding to non-zero singular values
 - **Null space of a matrix:** Given by the right singular vectors of $V$ corresponding to the zeroed singular values.
 
-#### Pseudoinverse
+#### Pseudoinverse<a name="pseudoinverse"></a>
 
 Additionally the SVD can be used to find the **pseudoinverse** of our matrix $A$, this is given by 
 $$A^{+} = V\Sigma^{+}U^{T}$$
@@ -172,7 +180,7 @@ We note that the $A^{+}$ exists regardless whether or not our matrix is square o
 
 The Pseudoinverse is very useful in computing the minimum norm solution, that is $Ax\cong b$ is given by $x=A^{+}b
 
-#### Lower-Rank Matrix Approximation
+#### Lower-Rank Matrix Approximation<a name="lower"></a>
 
 Suppose we want to best approximate a matrix A by a rank-k matrix. This is where the SVD comes in handy. Our singular value decomposition can also be written in the form
 
@@ -192,7 +200,7 @@ Below we show a step by step process of computing this rank-k approximation:
 
 These approximation come in handy for image processing, data compression, information retreival, and more topics we will go over in the following section.
 
-#### Total Least Squares
+#### Total Least Squares<a name="total"></a>
 
 In general least squares is applicable when our right hand side, b, is subject to some random error, but our matrix $A$ is known accurately. However, in the case that $A$ is also subject to error we can apply total least square. 
 
@@ -202,51 +210,85 @@ More specificaly, singular value decomposition can be used to find a unique solu
 
 
 
-### Real World Applications
+### Real World Applications<a name="world"></a>
 
 
 Singular Value Decomposition has been not been hoarded only for the domain of numerical analysis but is applicable in multiple other fields. We illustrate some of these real world applications below
 
-#### Image Processing and Compression
+#### Image Processing and Compression<a name="image"></a>
 
  Here we consider how SVD can be used to produce reduced image sizes. We begin by understanding that large images are formed by correspondingly large matrices, requiring alot of memory to store the image. By rewriting the image in its pixel by pixel form and removing the smaller singular values, we can form smaller matrices which would require less memory storage. We would lose some refinement with each loss of a singular value, but we would retain the overall image feature. An example of this can be seen below.
-
-![Image Processing.png](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/GrayscaleSVD.png)
 <div align="center">
-Figure 1: Illustrating Image Compression by removal of Singular Values and Subsequent Pixels</div>
+
+<img src="https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/GrayscaleSVD.png"  width="400" height="200">
+  
+  
+<b>Figure 1</b>: Illustrating Image Compression by removal of Singular Values and Subsequent Pixels
+</div>
 
   
 SVD can also be applied to the saturation of each pixel. Of course this becomes more nuanced when evaluating colored images, but we can also see how the saturation of each pixel can also affect grayscale images. An example of the effect of SVD on saturation can be seen below.
   
-![https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageSaturation.png](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageSaturation.png)
 <div align="center">
-Figure 2: Analyzing the Effect of SVD on Grayscale Saturation</div>
+  
+<img src="https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageSaturation.png"  width="400" height="200">
+
+  
+<b>Figure 2</b>: Analyzing the Effect of SVD on Grayscale Saturation</div>
   
 Finally within the domain of grayscale images we can see how the number of pixels and their respective saturation can be combined to illustrate the full effect of SVD on image compression.
   
-![total](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageValues.png )
 <div align="center">
-Figure 3: Comparing Singular Value Removal in Regards to Pixel Count and Saturation</div>
+  
+  
+<img src="https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageValues.png"  width="600" height="200">
+ 
+<b>Figure 3</b>: Comparing Singular Value Removal in Regards to Pixel Count and Saturation
+</div>
 
   
 The process of SVD can also be expanded to full color images. Each pixel in full color image has color saturation representation values of 0 to 255 for RGB. This entails complexity to the image, which requires a greater amount of memory to store an image. Representing each color relative to the full color image, we are able to see the amount of contribution each color has. In order to implement the SVD process we have to first separate the full color image into its red, green, and blue layers, as each of these three colors has its own matrix of information for the image. We remove the smallest singular values from each of the color matrices, and then we reconstruct the full color image using the modified color matrices.
 
-![color](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ColoredSVD.png)
 <div align="center">
-Figure 4: SVD Being Applied to Color Images</div>
+  
+<img src="https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ColoredSVD.png"  width="400" height="400">
+
+<b>Figure 4</b>: SVD Being Applied to Color Images</div>
 
   
 By applying the process of Singular Value Decomposition to images by using pixel saturation matrices for grayscale or full color images, we can compress the storage size while retaining the number of pixels. Isolating the least important pieces of information that are stored in the images and have removed them methodically, leaving only the most important components of the images. This process of removing the smallest singular values from the saturation matrices allows us to retain as much of the image quality as possible.
 
-#### Face Recognition
+#### Facial Recognition<a name="face"></a>
 
-We see other scenarios in which SVD(more often referred to as PCA in this scenario) is applied to an extensive library of facial images to identify the most dominant correlations between images. The result of this decomposition is a set of eigenfaces that define a new coordinate system
+Over the past few decades numerous facial recognition algorithms have been explored. Under different lighting conditions, poses and facial expressions we have witnessed progress towards recognition. A facial recognition algorithm and its implementation can be considered as a system similar to the image compression we highlighted above. Inputting a two dimensional images, a predetermined library of faces distinguishes the input image as a user’s face. With the hopeful output being the ability to discern face images.
+
+Since the facial recognition problem itself deals with images, we treat this similar to image compression. That is each pixel in an image is considered as a coordinate in an n-dimensional space, where n is the total number of pixels per image. Now given a collection of images we form a library of faces that serve as contenders for recognition. Since each image is a point in n-space, it would be computationally efficient to reduce the overall storage space of each image. 
+
+Using the eigenface technique, we form the space of images, which are then projected into a low dimensional space using singular value decomposition. Thus the high dimensional n-space is transformed to a set of uncorrelated singular values that span most if not all variation in the original data set. The determined singular values can be used to thereby attempt to reconstruct an input image, and subsequently
+classify a face as a library element. We can see an example of the construction of eigenface below.
+
+<div align="center">
+  
+<img src="https://github.com/magriln/MATH-4640-Project/blob/e76c9e723fa967c2991ce74aee9591c2e9d4fb84/eigenfaces.jpg"  width="600" height="200">
+
+<b>Figure 5</b>: Illustrating the Deconstruction of Facial Images Using SVD</div>
+
+From these images we can then input similar faces and compress them to identify their similarities to our library of faces. COmparing singular values we can correctly identify the faces of complete strangers or at least identify their defining features.
 
 
+#### Quantitative Finance<a name="quant"></a>
 
-#### Quantitative Finance 
+We see SVD being used in domains including finances but it plays a core piece in financial modeling. For example stock prices are affected by multiple factors, and various methods have been proposed to improve prediction accuracy. However, not all of the proposed features are valid, and there is often noise in the features—such as political, economic, and legal factors—which can lead to poor prediction results. Using SVD we can reconstruct the features of stock data, eliminate data noise, retain the most effective data features, and improve the accuracy of prediction.  We can reconstruct the data by selecting the large singular values, which will reduce if not eleiminate the noise in the data and improve data quality. 
 
-#### Web Searching
+In stocks we can construct a matrix matrix that is $m$ by $n$, where m is the number of stock data records and n is the number of stock features. Then applying neural network algorithms such as LSTM are applied to predict the behavior of these stocks. An example of this relationship is illustrated in the image below.
+
+<div align="center">
+  
+<img src="https://github.com/magriln/MATH-4640-Project/blob/827eeefa620f18bfa287ce00ebc16a2d9645a588/StocksSVD.png"  width="400" height="300">
+
+<b>Figure 6</b>: Illustrating the Use of SVD-LSTM in Stock Predictions</div>
+
+#### Web Searching<a name="web"></a>
 
 Search engines like Google use enormous matrices of cross referencing checking what words are on each page. Upon a Google search, the higher ranks of this matrix usually go to pages with your key words that have lots of links to them. But there are billions of pages out there, and storing a billion by billion matrix is trouble. This is not considering querying through it.
 
@@ -254,14 +296,13 @@ SVD comes in handy in this application as well. In searching, we really only car
 
 
 
+Of course these are just a handfull of real world applications, and we can see Singular Value Decomposition being applied everywhere from medical fields to athletics. We will now analyze how most of these industries code their own SVD by illustrating a base algorithm.
 
 
-
-
-### Coding SVD
+### Coding SVD<a name="coding"></a>
 
 ---
-### References
+### References<a name="references"></a>
 ---
 
 https://en.wikipedia.org/wiki/Singular_value_decomposition#Total_least_squares_minimization

@@ -206,7 +206,16 @@ In general least squares is applicable when our right hand side, b, is subject t
 
 Computing the SVD of $[A, b]$ gives us the total least squares solution by minimizing the orthogonal distance between model and data. The solution turns out to be the right-singular vector, $v_{m}$, of $A$ corresponding to the smallest singular value.
 
-More specificaly, singular value decomposition can be used to find a unique solution to total least squares problems.
+More specificaly, singular value decomposition can be used to find a unique solution to total least squares problems. We derive this from the following manipulation,
+
+$$||Ax - b||^{2} = ||U\Sigma V^{T}x - b||^{2} = ||U^{T}(U\Sigma V^{T}x - b)||^{2}$$
+
+Now if we let $V^{T}x = y$ we proceed to have the following,
+
+$$||U^{T}(U\Sigma V^{T}x - b)||^{2} = ||(\Sigma y - U^{T}b)||^{2}$$
+
+From this we can deduce that $x = Vy$ which is what we noted previously. Thus SVD provides a concrete method of solving least square problems.
+
 
 
 

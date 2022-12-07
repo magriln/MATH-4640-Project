@@ -305,12 +305,17 @@ Of course these are just a handfull of real world applications, and we can see S
 ### References<a name="references"></a>
 ---
 
-https://en.wikipedia.org/wiki/Singular_value_decomposition#Total_least_squares_minimization
-https://math.mit.edu/~gs/linearalgebra/SVD_Slides.pdf
-https://people.duke.edu/~hpgavin/SystemID/CourseNotes/TotalLeastSquares.pdf
-https://web.stanford.edu/class/cs168/l/l9.pdf
-https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_svd_apps.html
-https://staff.imsa.edu/~fogel/LinAlg/PDF/50%20Application%20of%20the%20SVD.pdf
-http://eceweb1.rutgers.edu/~orfanidi/aosp/aosp-ch15.pdf
-https://www.lagrange.edu/academics/undergraduate/undergraduate-research/citations/18-Citations2020.Compton.pdf
-https://sandipanweb.wordpress.com/2018/01/06/eigenfaces-and-a-simple-face-detector-with-pca-svd-in-python/
+* Algebraic structures. Linear Algebra Homepage. (n.d.). Retrieved December 7, 2022, from http://staff.imsa.edu/~fogel/LinAlg/ 
+* Dey, S. (2018, January 8). Eigenfaces and a simple face detector with PCA/SVD in python. sandipanweb. Retrieved December 7, 2022, from https://sandipanweb.wordpress.com/2018/01/06/eigenfaces-and-a-simple-face-detector-with-pca-svd-in-python/ 
+* Eckart, C.; Young, G. (1936). "The approximation of one matrix by another of lower rank". Psychometrika. 1 (3): 211–8. doi:10.1007/BF02288367. S2CID 10163399.
+* El Ghaoui, L. (2021). Applications of SVD. Retrieved December 7, 2022, from https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_svd_apps.html 
+* Ernstberger, S. L. (2020). Singular Value Decomposition: Applications to Image Processing . Undergraduate Research. Retrieved December 7, 2022, from https://www.lagrange.edu/academics/undergraduate/undergraduate-research/index.html 
+* Gavin, H. P. (2017, December 17). Total least squares - duke university. Retrieved December 7, 2022, from https://people.duke.edu/~hpgavin/SystemID/CourseNotes/TotalLeastSquares.pdf 
+* Golub, Gene H.; Kahan, William (1965). "Calculating the singular values and pseudo-inverse of a matrix". Journal of the Society for Industrial and Applied Mathematics, Series B: Numerical Analysis. 2 (2): 205–224. Bibcode:1965SJNA....2..205G. doi:10.1137/0702016. JSTOR 2949777.
+*  Golub, G. H.; Reinsch, C. (1970). "Singular value decomposition and least squares solutions". Numerische Mathematik. 14 (5): 403–420. doi:10.1007/BF02163027. MR 1553974. S2CID 123532178.
+* Heath, M. T. (2018). Scientific computing: An introductory survey. Society for Industrial and Applied Mathematics. 
+*  Hestenes, M. R. (1958). "Inversion of Matrices by Biorthogonalization and Related Results". Journal of the Society for Industrial and Applied Mathematics. 6 (1): 51–90. doi:10.1137/0106005. JSTOR 2098862. MR 0092215.
+* Roughgarden, T., &amp; Valiant, G. (2022, April 24). CS 168: The Modern Algorithmic Toolbox, spring 2022. The Modern Algorithmic Toolbox (CS168), Spring 2022. Retrieved December 7, 2022, from https://web.stanford.edu/class/cs168/index.html 
+* Rutgers. (n.d.). SVD and Signal Processing. Applied Optimum Signal Processing. Retrieved December 7, 2022, from http://eceweb1.rutgers.edu/~orfanidi/aosp/ 
+* Verma, J. K. (2020, March 13). Introduction to linear algebra, fifth edition (2016). Introduction to Linear Algebra, 5th Edition. Retrieved December 7, 2022, from https://math.mit.edu/~gs/linearalgebra/ 
+* Wikimedia Foundation. (2022, November 7). Singular value decomposition. Wikipedia. Retrieved December 7, 2022, from https://en.wikipedia.org/wiki/Singular_value_decomposition#Total_least_squares_minimization 

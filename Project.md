@@ -26,9 +26,9 @@
 ### Quick History<a name="history"></a>
 
 
-For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD Eugenio Beltrami and Camille Jordan found the SVD for simplification of bilinear forms in 1870s. Jordan went on and obtained geometric interpretation of the largest singular value. Next J. J. Sylvester wrote two papers on the SVD in 1889. In these papers he found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions. This was followed by Erhard Schmidt (1876-1959) who discovered the SVD for function spaces while investigating integral equations. The main problem he was investigating was finding the best rank k approximations to $A$ of the form, $u_{1}v_{1}^{t} + \cdots + u_{k}v_{k}^{t}$.
+For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD Eugenio Beltrami and Camille Jordan found the SVD for simplification of bilinear forms in 1870s. Jordan went on and obtained geometric interpretation of the largest singular value. Next J. J. Sylvester wrote two papers on the SVD in 1889. In these papers he found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions. This was followed by Erhard Schmidt (1876-1959) who discovered the SVD for function spaces while investigating integral equations. The main problem he was investigating was finding the best rank k approximations to $A$ of the form, $u_{1}v_{1}^{t} + \cdots + u_{k}v_{k}^{t}$<sup>[[10]](#Hestenes)</sup>.
 
-After a few years we had Autonne who found the SVD for complex matrices in 1913. This was succeeded by Eckhart and Young who managed to extend SVD to rectangular matrices in 1936. Then we witnessed Golub and Kahan introducing SVD in numerical analysis in 1965, the main reason we highlight SVD in this presentation. Finally, Golub expanded on his numerical analysis insights by proposing an algorithm for SVD in 1970.
+After a few years we had Autonne who found the SVD for complex matrices in 1913. This was succeeded by Eckhart and Young who managed to extend SVD to rectangular matrices in 1936<sup>[[3]](#young)</sup>. Then we witnessed Golub and Kahan introducing SVD in numerical analysis in 1965, the main reason we highlight SVD in this presentation<sup>[[7]](#Kahan)</sup>. Finally, Golub expanded on his numerical analysis insights by proposing an algorithm for SVD in 1970<sup>[[8]](#Golub)</sup>.
 
 
 ### Base Idea and Introduction<a name="introduction"></a>
@@ -160,7 +160,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 ### Numerical Analysis Applications of SVD<a name="analysis"></a>
 
 #### Matrix Properties<a name="matrices"></a>
-Below we note a few important applications of SVD in regards to linear algebra and numberical analysis. One main benefit is its ability to compute other aspects regarding matrices that we list below:
+Below we note a few important applications of SVD in regards to linear algebra and numberical analysis. One main benefit is its ability to compute other aspects regarding matrices that we list below<sup>[[9]](#text)</sup>:
 - **Minimum norm solution:** given a system of equations $Ax\cong b$ we can determine the following,
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 - **Euclidean matrix norm:** Can be given by $||A|| _{2} = \sigma_{max}$
@@ -301,21 +301,33 @@ Of course these are just a handfull of real world applications, and we can see S
 
 ### Coding SVD<a name="coding"></a>
 
+As mentioned in the history portion of this paper Golub and Kahan constructed a universal algorithm for constructing the SVD. This was further altered for special cases of SVD. We illustrate the pseudocode for Golub-Kahan and Golub-Reinsch<sup>[[2]](#algorithms)</sup> algorithm below,
+
+<div align="center">
+  
+<img src="https://github.com/magriln/MATH-4640-Project/blob/e3215f104a70e65e6656ccf66a99ad670a9f1e40/SVD1.png"  width="450" height="300">
+<img src="https://github.com/magriln/MATH-4640-Project/blob/e3215f104a70e65e6656ccf66a99ad670a9f1e40/SVD2.png"  width="350" height="300">
+
+<b>Figure 7</b>: Illustrating Golub-Kahan, and Golub-Reinsch SVD Algorithms</div>
+
+
+
 ---
 ### References<a name="references"></a>
 ---
 
-* Algebraic structures. Linear Algebra Homepage. (n.d.). Retrieved December 7, 2022, from http://staff.imsa.edu/~fogel/LinAlg/ 
-* Dey, S. (2018, January 8). Eigenfaces and a simple face detector with PCA/SVD in python. sandipanweb. Retrieved December 7, 2022, from https://sandipanweb.wordpress.com/2018/01/06/eigenfaces-and-a-simple-face-detector-with-pca-svd-in-python/ 
-* Eckart, C.; Young, G. (1936). "The approximation of one matrix by another of lower rank". Psychometrika. 1 (3): 211–8. doi:10.1007/BF02288367. S2CID 10163399.
-* El Ghaoui, L. (2021). Applications of SVD. Retrieved December 7, 2022, from https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_svd_apps.html 
-* Ernstberger, S. L. (2020). Singular Value Decomposition: Applications to Image Processing . Undergraduate Research. Retrieved December 7, 2022, from https://www.lagrange.edu/academics/undergraduate/undergraduate-research/index.html 
-* Gavin, H. P. (2017, December 17). Total least squares - duke university. Retrieved December 7, 2022, from https://people.duke.edu/~hpgavin/SystemID/CourseNotes/TotalLeastSquares.pdf 
-* Golub, Gene H.; Kahan, William (1965). "Calculating the singular values and pseudo-inverse of a matrix". Journal of the Society for Industrial and Applied Mathematics, Series B: Numerical Analysis. 2 (2): 205–224. Bibcode:1965SJNA....2..205G. doi:10.1137/0702016. JSTOR 2949777.
-*  Golub, G. H.; Reinsch, C. (1970). "Singular value decomposition and least squares solutions". Numerische Mathematik. 14 (5): 403–420. doi:10.1007/BF02163027. MR 1553974. S2CID 123532178.
-* Heath, M. T. (2018). Scientific computing: An introductory survey. Society for Industrial and Applied Mathematics. 
-*  Hestenes, M. R. (1958). "Inversion of Matrices by Biorthogonalization and Related Results". Journal of the Society for Industrial and Applied Mathematics. 6 (1): 51–90. doi:10.1137/0106005. JSTOR 2098862. MR 0092215.
-* Roughgarden, T., &amp; Valiant, G. (2022, April 24). CS 168: The Modern Algorithmic Toolbox, spring 2022. The Modern Algorithmic Toolbox (CS168), Spring 2022. Retrieved December 7, 2022, from https://web.stanford.edu/class/cs168/index.html 
-* Rutgers. (n.d.). SVD and Signal Processing. Applied Optimum Signal Processing. Retrieved December 7, 2022, from http://eceweb1.rutgers.edu/~orfanidi/aosp/ 
-* Verma, J. K. (2020, March 13). Introduction to linear algebra, fifth edition (2016). Introduction to Linear Algebra, 5th Edition. Retrieved December 7, 2022, from https://math.mit.edu/~gs/linearalgebra/ 
-* Wikimedia Foundation. (2022, November 7). Singular value decomposition. Wikipedia. Retrieved December 7, 2022, from https://en.wikipedia.org/wiki/Singular_value_decomposition#Total_least_squares_minimization 
+1. Algebraic structures. Linear Algebra Homepage. (n.d.). Retrieved December 7, 2022, from http://staff.imsa.edu/~fogel/LinAlg/ 
+2. Cline, A. K., &amp; Dhillon, I. S. (2021). Computation of the decomposition - university of Texas at Austin. https://www.cs.utexas.edu/. Retrieved December 7, 2022, from https://www.cs.utexas.edu/~inderjit/public_papers/HLA_SVD.pdf <a name="algorithms"></a>
+3. Dey, S. (2018, January 8). Eigenfaces and a simple face detector with PCA/SVD in python. sandipanweb. Retrieved December 7, 2022, from https://sandipanweb.wordpress.com/2018/01/06/eigenfaces-and-a-simple-face-detector-with-pca-svd-in-python/ 
+4. Eckart, C.; Young, G. (1936). "The approximation of one matrix by another of lower rank". Psychometrika. 1 (3): 211–8. doi:10.1007/BF02288367. S2CID 10163399.<a name="young"></a>
+5. El Ghaoui, L. (2021). Applications of SVD. Retrieved December 7, 2022, from https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_svd_apps.html 
+6. Ernstberger, S. L. (2020). Singular Value Decomposition: Applications to Image Processing . Undergraduate Research. Retrieved December 7, 2022, from https://www.lagrange.edu/academics/undergraduate/undergraduate-research/index.html 
+7. Gavin, H. P. (2017, December 17). Total least squares - duke university. Retrieved December 7, 2022, from https://people.duke.edu/~hpgavin/SystemID/CourseNotes/TotalLeastSquares.pdf 
+8. Golub, Gene H.; Kahan, William (1965). "Calculating the singular values and pseudo-inverse of a matrix". Journal of the Society for Industrial and Applied Mathematics, Series B: Numerical Analysis. 2 (2): 205–224. Bibcode:1965SJNA....2..205G. doi:10.1137/0702016. JSTOR 2949777.<a name="Kahan"></a>
+9. Golub, G. H.; Reinsch, C. (1970). "Singular value decomposition and least squares solutions". Numerische Mathematik. 14 (5): 403–420. doi:10.1007/BF02163027. MR 1553974. S2CID 123532178.<a name="Golub"></a>
+10. Heath, M. T. (2018). Scientific computing: An introductory survey. Society for Industrial and Applied Mathematics. <a name="text"></a>
+11. Hestenes, M. R. (1958). "Inversion of Matrices by Biorthogonalization and Related Results". Journal of the Society for Industrial and Applied Mathematics. 6 (1): 51–90. doi:10.1137/0106005. JSTOR 2098862. MR 0092215.<a name="Hestenes"></a>
+12. Roughgarden, T., &amp; Valiant, G. (2022, April 24). CS 168: The Modern Algorithmic Toolbox, spring 2022. The Modern Algorithmic Toolbox (CS168), Spring 2022. Retrieved December 7, 2022, from https://web.stanford.edu/class/cs168/index.html 
+13. Rutgers. (n.d.). SVD and Signal Processing. Applied Optimum Signal Processing. Retrieved December 7, 2022, from http://eceweb1.rutgers.edu/~orfanidi/aosp/ 
+14. Verma, J. K. (2020, March 13). Introduction to linear algebra, fifth edition (2016). Introduction to Linear Algebra, 5th Edition. Retrieved December 7, 2022, from https://math.mit.edu/~gs/linearalgebra/ 
+15. Wikimedia Foundation. (2022, November 7). Singular value decomposition. Wikipedia. Retrieved December 7, 2022, from https://en.wikipedia.org/wiki/Singular_value_decomposition#Total_least_squares_minimization 

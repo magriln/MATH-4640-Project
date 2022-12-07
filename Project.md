@@ -152,8 +152,7 @@ $$A = U\Sigma V^{T} = \begin{bmatrix}
 ### Numerical Analysis Applications of SVD
 
 #### Matrix Properties
-
-Now from our lectures we noted a few important applications of SVD. One main benefit is its ability to compute other aspects regarding matrices that we list below:
+Below we note a few important applications of SVD in regards to linear algebra and numberical analysis. One main benefit is its ability to compute other aspects regarding matrices that we list below:
 - **Minimum norm solution:** given a system of equations $Ax\cong b$ we can determine the following,
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 - **Euclidean matrix norm:** Can be given by $||A|| _{2} = \sigma_{max}$
@@ -210,18 +209,38 @@ Singular Value Decomposition has been not been hoarded only for the domain of nu
 
 #### Image Processing and Compression
 
-The process of Singular Value Decomposition can be used in many applications, including watermarking an image, computing weighted least squares, and optimal prediction. Here we will consider how this process could be used to produce reduced image sizes. We begin by understanding that large images are formed by correspondingly large matrices, hence requiring a sizable amount of memory to store the image. By rewriting the image in its broken-down form and removing the smaller singular values, we can form smaller matrices which would in turn require less memory storage. We would lose some refinement with each loss of a singular value, but overall, we would retain the overall image feature. An example of this can be seen below.
+ Here we consider how SVD can be used to produce reduced image sizes. We begin by understanding that large images are formed by correspondingly large matrices, requiring alot of memory to store the image. By rewriting the image in its pixel by pixel form and removing the smaller singular values, we can form smaller matrices which would require less memory storage. We would lose some refinement with each loss of a singular value, but we would retain the overall image feature. An example of this can be seen below.
 
-![Grayscale Base](Image Processing.png)
+![[Image Processing.png](https://github.com/magriln/MATH-4640-Project/blob/e4f6bd13b94cffdfdcfe5cbb496f0c56ab90d8d1/Image%20Processing.png)](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/GrayscaleSVD.png)
+<div align="center">
+Figure 1: Illustrating Image Compression by removal of Singular Values and Subsequent Pixels</div>
 
-The process of SVD can also be expanded to full color images. Each pixel in full color image has color saturation representation values of 0 to 255 for red, green, and blue. This adds complexity to the image, which requires a greater amount of storage space used to save a particular image. By showing the representation of each color relative to the full color image, we are able to see the amount of contribution each color has to each pixel. In order to implement the SVD process we will have to first separate the full color image into its red, green, and blue layers, as each of these three colors has its own matrix of information for the image. We will remove the smallest singular values from each of the color matrices, and then we will reconstruct the full color image using the modified color matrices.
-#### INSERT IMAGE
+  
+SVD can also be applied to the saturation of each pixel. Of course this becomes more nuanced when evaluating colored images, but we can also see how the saturation of each pixel can also affect grayscale images. An example of the effect of SVD on saturation can be seen below.
+  
+![https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageSaturation.png](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageSaturation.png)
+<div align="center">
+Figure 2: Analyzing the Effect of SVD on Grayscale Saturation</div>
+  
+Finally within the domain of grayscale images we can see how the number of pixels and their respective saturation can be combined to illustrate the full effect of SVD on image compression.
+  
+![total](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ImageValues.png)
+<div align="center">
+Figure 3: Comparing Singular Value Removal in Regards to Pixel Count and Saturation</div>
 
-By applying the process of Singular Value Decomposition to images by using pixel saturation matrices for grayscale or full color images, we can compress the storage size of an image even while retaining the number of pixels. We have isolated the least important pieces of information that are stored in the images and have removed them methodically, leaving only the most important components of the images. This process of removing the smallest singular values from the saturation matrices allows us to retain as much of the image quality as possible.
+  
+The process of SVD can also be expanded to full color images. Each pixel in full color image has color saturation representation values of 0 to 255 for RGB. This entails complexity to the image, which requires a greater amount of memory to store an image. Representing each color relative to the full color image, we are able to see the amount of contribution each color has. In order to implement the SVD process we have to first separate the full color image into its red, green, and blue layers, as each of these three colors has its own matrix of information for the image. We remove the smallest singular values from each of the color matrices, and then we reconstruct the full color image using the modified color matrices.
+
+![color](https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/ColoredSVD.png)
+<div align="center">
+Figure 4: SVD Being Applied to Color Images</div>
+
+  
+By applying the process of Singular Value Decomposition to images by using pixel saturation matrices for grayscale or full color images, we can compress the storage size while retaining the number of pixels. Isolating the least important pieces of information that are stored in the images and have removed them methodically, leaving only the most important components of the images. This process of removing the smallest singular values from the saturation matrices allows us to retain as much of the image quality as possible.
 
 #### Face Recognition
-###### 
-#### INSERT IMAGE
+
+We see other scenarios in which SVD(more often referred to as PCA in this scenario) is applied to an extensive library of facial images to identify the most dominant correlations between images. The result of this decomposition is a set of eigenfaces that define a new coordinate system
 
 
 
@@ -229,7 +248,7 @@ By applying the process of Singular Value Decomposition to images by using pixel
 
 #### Web Searching
 
-Search engines like Google use enormous matrices of cross referencing checking what words are on each page. Upon a Google search, the higher ranks of this matrix usually go to pages with your key words that have lots of links to them. But there are billions of pages out there, and as we saw in our class storing a billion by billion matrix is trouble. This is not considering querying through it.
+Search engines like Google use enormous matrices of cross referencing checking what words are on each page. Upon a Google search, the higher ranks of this matrix usually go to pages with your key words that have lots of links to them. But there are billions of pages out there, and storing a billion by billion matrix is trouble. This is not considering querying through it.
 
 SVD comes in handy in this application as well. In searching, we really only care about the main directions that the Web is taking, the top results. So the first few singular values create a very good approximation for the enormous matrix, can be searched relatively quickly and provide compression ratios of millions to one. 
 
@@ -253,3 +272,4 @@ https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_svd_apps.html
 https://staff.imsa.edu/~fogel/LinAlg/PDF/50%20Application%20of%20the%20SVD.pdf
 http://eceweb1.rutgers.edu/~orfanidi/aosp/aosp-ch15.pdf
 https://www.lagrange.edu/academics/undergraduate/undergraduate-research/citations/18-Citations2020.Compton.pdf
+https://sandipanweb.wordpress.com/2018/01/06/eigenfaces-and-a-simple-face-detector-with-pca-svd-in-python/

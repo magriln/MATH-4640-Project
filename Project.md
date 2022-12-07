@@ -5,8 +5,25 @@
 ###### Topic: 11
 ###### Title: The SVD. What is it, what it can be used for, how it can be computed.
 ---
+
+### Quick History
+
+
+For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD
+- Eugenio Beltrami and Camille Jordan found the SVD
+for simplification of bilinear forms in 1870s.
+- Jordan obtained geometric interpretation of the largest singular value
+- J. J. Sylvester wrote two papers on the SVD in 1889.
+  - He found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions.
+- Erhard Schmidt (1876-1959) discovered the SVD for function spaces while investigating integral equations.
+  - His problem was to find the best rank k approximations to A of the form, $u_{1}v_{1}^{t} + \cdots + u_{k}v_{k}^{t}$.
+- Autonne found the SVD for complex matrices in 1913.
+- Eckhart and Young extended SVD to rectangular matrices in 1936.
+- Golub and Kahan introduced SVD in numerical analysis in 1965 .
+- Golub proposed an algorithm for SVD in 1970.
+
+
 ### Base Idea and Introduction
----
 Singular Value Decomposition is as simple as its name, its a method of decomposing matrix into matrices composed of singular values. Of course it is a little more intuitvie than that. Given a matrix, $A \in \mathbb{R}^{m \times n}$, we can factorize this matrix into the following form,
 $$A = U\Sigma V^{T}$$
 These matrices are defined below:
@@ -80,6 +97,7 @@ $$A^{T}A - \lambda_{2}I = \begin{bmatrix}
 2 & -2 & -1\end{bmatrix}$$ 
 
 Reducing this matrix will give us our first eigenvector which is given by,
+
 $$v_{2} = \begin{bmatrix}
 1/\sqrt{18}\\
 -1/\sqrt{18}\\
@@ -140,7 +158,7 @@ Now from our lectures we noted a few important applications of SVD. One main ben
 $$x = \sum_{\sigma_{i}\neq0} \frac{u_{i}^{T}b}{\sigma_{i}}v_{i}$$
 - **Euclidean matrix norm:** Can be given by $||A|| _{2} = \sigma_{max}$
 - **Euclidean condition number of matrix:** $cond_{2}(A) = \frac{\sigma_{max}}{\sigma_{min}}$
-- **Rank of a matrix:** rank(A) = number of nonzero singular value, count $\sigma_{i} \neq 0$
+- **Rank of a matrix:** rank(A) = number of nonzero singular value, count( $\sigma_{i} \neq 0$)
 - **Range of a matrix:** Given by the left singular vectors of $U$ corresponding to non-zero singular values
 - **Null space of a matrix:** Given by the right singular vectors of $V$ corresponding to the zeroed singular values.
 
@@ -193,7 +211,8 @@ Singular Value Decomposition has been not been hoarded only for the domain of nu
 #### Image Processing and Compression
 
 The process of Singular Value Decomposition can be used in many applications, including watermarking an image, computing weighted least squares, and optimal prediction. Here we will consider how this process could be used to produce reduced image sizes. We begin by understanding that large images are formed by correspondingly large matrices, hence requiring a sizable amount of memory to store the image. By rewriting the image in its broken-down form and removing the smaller singular values, we can form smaller matrices which would in turn require less memory storage. We would lose some refinement with each loss of a singular value, but overall, we would retain the overall image feature. An example of this can be seen below.
-#### INSERT IMAGE
+
+![Grayscale Base](Image Processing.png)
 
 The process of SVD can also be expanded to full color images. Each pixel in full color image has color saturation representation values of 0 to 255 for red, green, and blue. This adds complexity to the image, which requires a greater amount of storage space used to save a particular image. By showing the representation of each color relative to the full color image, we are able to see the amount of contribution each color has to each pixel. In order to implement the SVD process we will have to first separate the full color image into its red, green, and blue layers, as each of these three colors has its own matrix of information for the image. We will remove the smallest singular values from each of the color matrices, and then we will reconstruct the full color image using the modified color matrices.
 #### INSERT IMAGE
@@ -217,26 +236,10 @@ SVD comes in handy in this application as well. In searching, we really only car
 
 
 
----
-### Quick History
----
 
-For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD
-- Eugenio Beltrami and Camille Jordan found the SVD
-for simplification of bilinear forms in 1870s.
-- Jordan obtained geometric interpretation of the largest singular value
-- J. J. Sylvester wrote two papers on the SVD in 1889.
-  - He found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions.
-- Erhard Schmidt (1876-1959) discovered the SVD for function spaces while investigating integral equations.
-  - His problem was to find the best rank k approximations to A of the form, $u_{1}v_{1}^{t} + \cdots + u_{k}v_{k}^{t}$.
-- Autonne found the SVD for complex matrices in 1913.
-- Eckhart and Young extended SVD to rectangular matrices in 1936.
-- Golub and Kahan introduced SVD in numerical analysis in 1965 .
-- Golub proposed an algorithm for SVD in 1970.
 
----
+
 ### Coding SVD
----
 
 ---
 ### References

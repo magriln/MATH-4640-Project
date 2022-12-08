@@ -26,7 +26,7 @@
 ### Quick History<a name="history"></a>
 
 
-For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD. We start with Eugenio Beltrami and Camille Jordan who found the SVD for simplification of bilinear forms in 1870s. Jordan went on and obtained geometric interpretation of the largest singular value. Next J. J. Sylvester wrote two papers on the SVD in 1889. In these papers he found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions. This was followed by Erhard Schmidt who in 1907 discovered the SVD for function spaces while investigating integral equations. The main problem he was investigating was finding the best rank k approximations to $A$ of the form, $u_{1}v_{1}^{t} + \cdots + u_{k}v_{k}^{t}$<sup>[[12]](#Hestenes)</sup>.
+For those of us who enjoy an origin story here is a quick timeline of events regarding the development of SVD. We start with Eugenio Beltrami and Camille Jordan who found the SVD for simplification of bilinear forms in the 1870s. Jordan went on and obtained geometric interpretation of the largest singular value. Next J. J. Sylvester wrote two papers on the SVD in 1889. In these papers he found algorithms to diagonalise quadratic and bilinear forms by means of orthogonal substitutions. This was followed by Erhard Schmidt who in 1907 discovered the SVD for function spaces while investigating integral equations. The main problem he was investigating was finding the best rank k approximations to $A$ of the form, $u_{1}v_{1}^{t} + \cdots + u_{k}v_{k}^{t}$<sup>[[12]](#Hestenes)</sup>.
 
 After a few years we had Autonne who found the SVD for complex matrices in 1915 using polar decomposition. This was succeeded by Eckhart and Young who managed to extend SVD to rectangular matrices in 1936<sup>[[4]](#young)</sup>. Then we witnessed Golub and Kahan introducing SVD in numerical analysis in 1965, the main reason we highlight SVD in this presentation<sup>[[8]](#Kahan)</sup>. Finally, Golub expanded on his numerical analysis insights by proposing an algorithm for SVD in 1970<sup>[[9]](#Golub)</sup>.
 
@@ -62,7 +62,7 @@ These properties prevents us from working with a possible "ugly matrix" by produ
 
 We note that in general there is **no exact method for computing the SVD**. However, we will now illustrate the one basic algorithm that produce the matrices listed above and use a guided example to see how it works. 
 
-First we will produce the singular values $\sigma_{i}$ of our diagonal matrix $\Sigma$. Given a matrix $A$ the singula values are computed from the eigenvalues of $AA^{T}$. We see an example of this below,
+First we will produce the singular values $\sigma_{i}$ of our diagonal matrix $\Sigma$. Given a matrix $A$ the singular values are computed from the eigenvalues of $AA^{T}$. We see an example of this below,
 
 $$A = \begin{bmatrix}
 3 & 2 & 2\\
@@ -214,7 +214,7 @@ Now if we let $V^{T}x = y$ we proceed to have the following,
 
 $$||U^{T}(U\Sigma V^{T}x - b)||^{2} = ||(\Sigma y - U^{T}b)||^{2}$$
 
-From this we can deduce that $x = Vy$ which is what we noted previously. Thus SVD provides a concrete method of solving least square problems.
+From this we can deduce that $x = Vy$ which is what we noted previously. Thus SVD provides a concrete method of solving total least square problems.
 
 
 
@@ -222,11 +222,11 @@ From this we can deduce that $x = Vy$ which is what we noted previously. Thus SV
 ### Real World Applications<a name="world"></a>
 
 
-Singular Value Decomposition has been not been hoarded only for the domain of numerical analysis but is applicable in multiple other fields. We illustrate some of these real world applications below
+Singular Value Decomposition has been not been hoarded only for the domain of numerical analysis but is applicable in multiple other fields. We illustrate some of these real world applications below.
 
 #### Image Processing and Compression<a name="image"></a>
 
- Here we consider how SVD can be used to produce reduced image sizes. We begin by understanding that large images are formed by correspondingly large matrices, requiring alot of memory to store the image. By rewriting the image in its pixel by pixel form and removing the smaller singular values, we can form smaller matrices which would require less memory storage. We would lose some refinement with each loss of a singular value, but we would retain the overall image feature. An example of this can be seen below.
+Here we consider how SVD can be used to produce reduced image sizes. We begin by understanding that large images are formed by correspondingly large matrices, requiring alot of memory to store the image. By rewriting the image into pixel by pixel matrix form and removing the smaller singular values, we can form smaller matrices which would require less memory storage. We would lose some refinement with each loss of a singular value, but we would retain the overall image feature. An example of this can be seen below.
 <div align="center">
 
 <img src="https://github.com/magriln/MATH-4640-Project/blob/82fdedb40f049934835c19eb3b51f8d99f39ff8e/GrayscaleSVD.png"  width="400" height="200">
@@ -265,16 +265,16 @@ The process of SVD can also be expanded to full color images. Each pixel in full
 <b>Figure 4</b>: SVD Being Applied to Color Images</div>
 
   
-By applying the process of Singular Value Decomposition to images by using pixel saturation matrices for grayscale or full color images, we can compress the storage size while retaining the number of pixels. Isolating the least important pieces of information that are stored in the images and have removed them methodically, leaving only the most important components of the images. This process of removing the smallest singular values from the saturation matrices allows us to retain as much of the image quality as possible.
+By applying the process of Singular Value Decomposition to images by using pixel saturation matrices for grayscale or full color images, we can compress the storage size while retaining the number of pixels. Isolating the least important pieces of information that are stored in the images, leaving only the most important components of the images. This process of removing the smallest singular values from the saturation matrices to conserve storage while also  allowing us to retain as much of the image quality as possible is the true beauty of SVD.
 
 #### Facial Recognition<a name="face"></a>
 
 Over the past few decades numerous facial recognition algorithms have been explored. Under different lighting conditions, poses and facial expressions we have witnessed progress towards recognition. A facial recognition algorithm and its implementation can be considered as a system similar to the image compression we highlighted above. Inputting a two dimensional images, a predetermined library of faces distinguishes the input image as a user’s face. With the hopeful output being the ability to discern face images.
 
-Since the facial recognition problem itself deals with images, we treat this similar to image compression. That is each pixel in an image is considered as a coordinate in an n-dimensional space, where n is the total number of pixels per image. Now given a collection of images we form a library of faces that serve as contenders for recognition. Since each image is a point in n-space, it would be computationally efficient to reduce the overall storage space of each image. 
+Since the facial recognition problem itself deals with images, we treat this similar to image compression. That is each pixel in an image is considered as a coordinate in an $n$-dimensional space, where $n$ is the total number of pixels per image. Now given a collection of images we form a library of faces that serve as contenders for recognition. Since each image is a point in our $n$ dimnesional matrices, it would be computationally efficient to reduce the overall storage space of each image. 
 
 Using the eigenface technique, we form the space of images, which are then projected into a low dimensional space using singular value decomposition. Thus the high dimensional n-space is transformed to a set of uncorrelated singular values that span most if not all variation in the original data set. The determined singular values can be used to thereby attempt to reconstruct an input image, and subsequently
-classify a face as a library element. We can see an example of the construction of eigenface below.
+classify a face as a library element. We can see an example of the construction of eigenfaces below.
 
 <div align="center">
   
@@ -287,9 +287,9 @@ From these images we can then input similar faces and compress them to identify 
 
 #### Quantitative Finance<a name="quant"></a>
 
-We see SVD being used in domains including finances but it plays a core piece in financial modeling. For example stock prices are affected by multiple factors, and various methods have been proposed to improve prediction accuracy. However, not all of the proposed features are valid, and there is often noise in the features—such as political, economic, and legal factors—which can lead to poor prediction results. Using SVD we can reconstruct the features of stock data, eliminate data noise, retain the most effective data features, and improve the accuracy of prediction.  We can reconstruct the data by selecting the large singular values, which will reduce if not eleiminate the noise in the data and improve data quality. 
+We see SVD being used in domains including finances but it plays a core piece in financial modeling. For example stock prices are affected by multiple factors, and various methods have been proposed to improve prediction accuracy. However, not all of the proposed features are valid, and there is often noise in the features—such as political, economic, and legal factors—which can lead to poor prediction results. Using SVD we can reconstruct the features of stock data, collect the most contributing data features, eliminate noise, and improve the accuracy of model predictions.  We can reconstruct the data by selecting the large singular values, which will reduce if not eleiminate the noise in the data and improve data quality. 
 
-In stocks we can construct a matrix matrix that is $m$ by $n$, where m is the number of stock data records and n is the number of stock features. Then applying neural network algorithms such as LSTM are applied to predict the behavior of these stocks. An example of this relationship is illustrated in the image below.
+In stocks we can construct a matrix matrix that is $m$ by $n$, where $m$ is the number of stock data records and $n$ is the number of stock features. Then applying neural network algorithms such as LSTM are applied to predict the behavior of these stocks. An example of this relationship is illustrated in the image below.
 
 <div align="center">
   
@@ -301,8 +301,7 @@ In stocks we can construct a matrix matrix that is $m$ by $n$, where m is the nu
 
 Search engines like Google use enormous matrices of cross referencing checking what words are on each page. Upon a Google search, the higher ranks of this matrix usually go to pages with your key words that have lots of links to them. But there are billions of pages out there, and storing a billion by billion matrix is trouble. This is not considering querying through it.
 
-SVD comes in handy in this application as well. In searching, we really only care about the main directions that the Web is taking, the top results. So the first few singular values create a very good approximation for the enormous matrix, can be searched relatively quickly and provide compression ratios of millions to one. 
-
+SVD comes in handy in this application as well. When searching, we really only want to see the main directions that the Web is taking, that is the top results. So the first few singular values create a very good approximation for the enormous matrix, can be searched relatively quickly and provide compression ratios of millions to one. 
 
 
 Of course these are just a handfull of real world applications, and we can see Singular Value Decomposition being applied everywhere from medical fields to athletics. We will now analyze how most of these industries code their own SVD by illustrating a base algorithm.
